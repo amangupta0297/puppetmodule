@@ -1,0 +1,15 @@
+---
+yum::repo::mysql_community:enabled_version: '5.6'
+mysql::server::root_password: 'aman123'
+mysql_db:
+  'sonar':
+     dbname: 'sonar'
+     user: 'sonar'
+     password: 'sonar'
+class::java::distribution: 'jdk'
+class::java::version: '7'
+sonarqube::version: '5.5'
+sonarqube::jdbc:
+    url: 'jdbc:mysql://localhost:3306/sonar?useUnicode=true&characterEncoding=utf8&rewriteBatchedStatements=true'
+    username: 'sonar'
+    password: 'sonar'
